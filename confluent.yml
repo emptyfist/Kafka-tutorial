@@ -6,6 +6,7 @@ services:
       - ZOOKEEPER_CLIENT_PORT=2181
     ports:
       - 2181:2181
+    container_name: zookeeper
 
   kafka:
     image: confluentinc/cp-kafka:5.1.0
@@ -17,6 +18,7 @@ services:
       - zookeeper
     ports:
       - 9092:9092
+    container_name: kafka
 
   schema-registry:
     image: confluentinc/cp-schema-registry:5.1.0
@@ -28,3 +30,4 @@ services:
       - zookeeper
     ports:
       - 8081:8081
+    container_name: schema-registry

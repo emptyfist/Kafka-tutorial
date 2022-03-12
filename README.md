@@ -1,7 +1,7 @@
 # testing-kafka-app-with-jest
 Example set of applications using Kafka and Avro and a set of end-to-end tests in Jest.
 
-This was built as a demo for my blog post about [Testing Kafka queues with Jest on my Medium](https://medium.com/@colinwren/testing-a-apache-kafka-based-application-with-jest-avro-kafka-and-node-kafka-5dfa50389121).
+This was built as a demo for blog post about [Testing Kafka queues with Jest on my Medium](https://medium.com/@colinwren/testing-a-apache-kafka-based-application-with-jest-avro-kafka-and-node-kafka-5dfa50389121).
 
 If you find this project useful please leave a comment or 'Clap' on the blog post. Any PRs or Issues are gratefully accepted, this is a demo project so there may be use cases or bugs I've not covered.
 
@@ -15,6 +15,15 @@ cd ../adapter-app
 docker build -t kafka-test/adapter .
 cd ../consumer-app
 docker build -t kafka-test/consumer .
+```
+
+## Requirements
+
+- Node version must be 8.15.0
+- Install librdkafka.so as followings
+```bash
+git clone https://github.com/edenhill/librdkafka && cd librdkafka
+cd librdkafka && ./configure && make && make install && ldconfig
 ```
 
 Once the images are build you can then use the following commands; `make run` & `make kill` to bring the stack up and down.
